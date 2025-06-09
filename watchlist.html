@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&family=Unica+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="noir.css">
+    <title>Your Watchlist</title>
+</head>
+<body>
+    <div class="mainbox">
+        <nav>
+            <div class="logo">
+                <a href="index.html"><h2 class="img">noir.</h2></a>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="browse.html">Browse</a>
+                <a href="watchlist.html">Watchlist</a>
+                <a href="settings.html">Settings</a>
+                <a href="login.html">LogIn/SignUp</a>
+                <a href="about.html">About</a>
+            </div>
+        </nav>
+        <div class="header">
+            <h2>Your Lists</h2>
+            <input type="text" id="newWatchlistName" placeholder="Enter watchlist name" />
+            <button onclick="createWatchlist()">Create Watchlist</button>
+            <div id="watchlistsContainer"></div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <p>© 2025 Noir-Movie Watchlist App</p>
+            <p>This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
+            <img src="TMDb.svg" alt="TMDB Logo" class="tmdb-logo">
+        </div>
+    </footer>
+    <script type="module" src="watchlist.js"></script>
+</body>
+</html>
