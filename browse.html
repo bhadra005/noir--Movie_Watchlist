@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&family=Unica+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="noir.css">
+    <title>Browse Movies</title>
+</head>
+<body>
+    <div class="mainbox">
+    <nav>
+    <div class="logo">
+      <a href="index.html"><h2 class="img">noir.</h2></a>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="browse.html">Browse</a>
+      <a href="watchlist.html">Watchlist</a>
+      <a href="settings.html">Settings</a>
+      <a href="login.html">LogIn/SignUp</a>
+      <a href="about.html">About</a>
+    </div>
+  </nav>
+        <section class="filter">
+            <div class="browse_by">
+                <div class="dropdown">
+                    <a href="#">Year ⩔</a></li>
+                    <ul class="drop-menu">
+                        <li><a href="#" data-year-range="2020-2025">2020s</a></li>
+                        <li><a href="#" data-year-range="2010-2019">2010s</a></li>
+                        <li><a href="#" data-year-range="2000-2009">2000s</a></li>
+                        <li><a href="#" data-year-range="1990-1999">1990s</a></li>
+                        <li><a href="#" data-year-range="1980-1989">1990s</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <a href="#">Genre ⩔</a></li>       
+                    <ul class="drop-menu">
+                        <li><a href="#" data-genre="28">Action</a></li>
+                        <li><a href="#" data-genre="12">Adventure</a></li>
+                        <li><a href="#" data-genre="16">Animation</a></li>
+                        <li><a href="#" data-genre="35">Comedy</a></li>
+                        <li><a href="#" data-genre="80">Crime</a></li>
+                        <li><a href="#" data-genre="99">Documentary</a></li>
+                        <li><a href="#" data-genre="18">Drama</a></li>
+                        <li><a href="#" data-genre="10751">Family</a></li>
+                        <li><a href="#" data-genre="14">Fantasy</a></li>
+                        <li><a href="#" data-genre="36">History</a></li>
+                        <li><a href="#" data-genre="27">Horror</a></li>
+                        <li><a href="#" data-genre="10402">Music</a></li>
+                        <li><a href="#" data-genre="9648">Mystery</a></li>
+                        <li><a href="#" data-genre="10749">Romance</a></li>
+                        <li><a href="#" data-genre="878">Sci-Fi</a></li>
+                        <li><a href="#" data-genre="53">Thriller</a></li>
+                        <li><a href="#" data-genre="10752">War</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <a href="#">Rating ⩔</a></li>
+                    <ul class="drop-menu">
+                        <li><a href="#" data-rating="desc">Highest</a></li>
+                        <li><a href="#" data-rating="asc">Lowest</a></li>
+                    </ul>
+                </div>
+                <div id="movie-list"></div>
+            </div>
+            <div class="sea_bar">
+                <input type="text" id="find" name="find" placeholder="Search here" onkeyup="searchMovie()">
+                <button type="submit" id="search"><img src="icons8-search-30.png" alt="Search"></button>
+            </div>
+            <div id="film-search" class="movie-grid"></div>
+        </section>
+        <section class="popular">
+            <h3>Popular Films:</h3>
+            <div class="card-container" id="pop_slider">
+                
+            </div>
+        </section>
+        <section class="English">
+            <h3>Hollywood:</h3>
+            <div class="card-container" id="holl_slider">
+                
+            </div>
+        </section>
+        <section class="Hindi">
+            <h3>Bollywood:</h3>
+            <div class="card-container" id="boll_slider">
+                
+            </div>
+        </section>
+        <section class="Action">
+            <h3>Action:</h3>
+            <div class="card-container" id="act_slider">
+                
+            </div>
+        </section>
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <p>© 2025 Noir-Movie Watchlist App</p>
+            <p>This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
+            <img src="TMDb.svg" alt="TMDB Logo" class="tmdb-logo">
+        </div>
+    </footer>
+
+    <script src="browse.js"></script>
+    <script src="search.js"></script>
+</body>
+</html>

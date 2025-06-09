@@ -1,0 +1,540 @@
+html{
+    scroll-behavior: smooth;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+::-webkit-scrollbar {
+    width: 10px;
+    height: 5px;
+}
+::-webkit-scrollbar-track {
+    background: #172129; 
+}
+::-webkit-scrollbar-thumb {
+    background: #d2dcdf;
+    border-radius: 6px; 
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #93b2bc;
+    border-radius: 6px; 
+}
+img{
+    max-width: 100%;
+}
+body{
+    background-color: #172129;
+}
+.logo a{
+    text-decoration: none;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #172129;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+    padding: 0.5rem 1.5rem;
+}
+.logo {
+    display:flex;
+    align-items: center;
+}
+.img{
+    color: #d2dcdf;
+    font-family: "Unica One", sans-serif;
+    font-size: 2.5em;
+    font-weight: 300;
+    display:flex;
+    justify-content:center;
+    align-items:left;
+    width:180px;
+    height:47px;
+    margin:0;
+    padding: 0;
+    padding-right:55%;
+}
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+.nav-links a {
+    color: #d2dcdf;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: lighter;
+    font-family:"Nunito", sans-serif;
+}
+.nav-links a:hover{
+    color:#77a3c5;
+}
+.filter{
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.browse_by{
+    display: flex;
+    max-width: 1080px;
+    width: 100%;
+    font-family: "Nunito", serif;
+}
+.dropdown{
+    position: relative;
+}
+.dropdown a{
+    display: block;
+    background: #172129;
+    padding: 8px 12px;
+    border-radius: 1.5px;
+    text-decoration: none;
+    color: #d2dcdf;
+    cursor: pointer;
+}
+.dropdown:hover .drop-menu{
+    display: block;
+}
+.drop-menu{
+    display: none;
+    position: absolute;
+    background: #172129;
+    border: solid 1px #d2dcdf;
+    border-radius: 1px;
+    width: max-content;
+    margin-top: 2px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    z-index: 10;
+    max-height: 200px;
+    overflow-y: auto;
+}
+.drop-menu li{
+    list-style: none;
+}
+.drop-menu li a{
+    display: block;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: #d2dcdf;
+}
+.drop-menu li a:hover {
+    background-color: #d2dcdf;
+    color: #172129;
+}
+#movie-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+    width: 100%;
+}
+.card2 {
+    text-decoration: none;
+    color: #d2dcdf;
+    background-color: #172129;
+    border-radius: 1px;
+    font-size: medium;
+    font-family: "Nunito", sans-serif;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.2s ease;
+}
+.card2 img {
+  width: 100%;
+  display: block;
+}
+.card2 .info2 {
+  padding: 0.5rem;
+  font-size: 14px;
+  text-align: center;
+}
+.card2:hover {
+  transform: scale(1.05);
+}
+.sea_bar{
+    position: relative;
+    align-items: center;
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+}
+.sea_bar input{
+    background-color: #d2dcdf;
+    width: 100%;
+    padding: 10px 40px 10px 10px;
+    font-size: 1rem;
+    color: #172129;
+    border: 1px solid;
+    border-radius: 1px;
+    border-style: none;
+    font-family: "Nunito", serif;
+}
+#search{
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    border: none;
+}
+#search img{
+    width: 20px;
+    height: 20px;
+}
+.movie-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+    width: 100%;
+}
+.card1{
+    text-decoration: none;
+    color: #d2dcdf;
+    background-color: #172129;
+    border-radius: 1px;
+    font-size: medium;
+    font-family: "Nunito", sans-serif;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.2s ease;
+}
+.card1 img {
+  width: 100%;
+  display: block;
+}
+.card1 .info1 {
+  padding: 0.5rem;
+  font-size: 14px;
+  text-align: center;
+}
+.card1:hover {
+  transform: scale(1.05);
+} 
+h3{
+    color: #d2dcdf;
+    font-family: "Unica One", sans-serif;
+    font-weight: 400;
+}
+.popular{
+    padding: 20px;
+    background-color: #172129;
+    color: #d2dcdf;
+}
+.popular h3{
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+.card-container{
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 10px 0;
+    scroll-behavior: smooth;
+}
+.card{
+    background-color: #1f2a36;
+    border-radius: 2px;
+    display: block;
+    text-decoration: none;
+    overflow: hidden;
+    flex-shrink: 0;
+    font-family: "Nunito", sans-serif;
+    font-weight: 500;
+    font-size: medium;
+    font-weight: lighter;
+    color: #d2dcdf;
+    width: clamp(200px, 5rem, 400px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+.card img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.card .info{
+    padding: 10px;
+}
+.card .title{
+    font-size: 1rem;
+}
+.cast{
+    margin-top: 20px;
+}
+.cast h4{
+    font-family: "Unica One", sans-serif;
+}
+.cast-list{
+    display:flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+.actor-card{
+    flex: 0 0 auto;
+    width: 120px;
+    text-align: center;
+    color: #d2dcdf;
+}
+.actor-card img{
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+}
+.English{
+    padding: 20px;
+    background-color: #172129;
+    color: #d2dcdf;
+    
+}
+.English h3{
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+.Hindi{
+    padding: 20px;
+    background-color: #172129;
+    color: #d2dcdf;
+    
+}
+.Hindi h3{
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+.Action{
+    padding: 20px;
+    background-color: #172129;
+    color: #d2dcdf;
+    
+}
+.Action h3{
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+#movie-container{
+    max-width: 95%;
+    margin: auto;
+    background-color: #172129;
+    padding: 2rem;
+    border-radius: 2px;
+    color: #d2dcdf;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+#movie-container h2{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #d2dcdf;
+    padding-bottom: 0.5rem;
+    color: #d2dcdf;
+    font-family: "Unica One", sans-serif;
+}
+.movie-img{
+    max-width: 50%;
+    padding-left: 8%;
+    flex:  1 1 300px;
+}
+.movie-details{
+    max-width: 50%;
+    padding-top: 5%;
+    padding-right: 10%;
+    font-family: "Nunito", sans-serif;
+}
+#movie-container img{
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 1px;
+    margin-bottom: 1rem;
+    display: block;
+}
+.heading{
+    font-family: "Unica One", sans-serif;
+}
+#movie-container p{
+    margin: 0.5rem 0;
+    color: #d2dcdf;
+    font-size: medium;
+    font-family: "Nunito", sans-serif;
+    margin-bottom: 0.8rem;
+}
+.buttons{
+    padding-top: 2rem;
+}
+.buttons button{
+    background-color: #d2dcdf;
+    color: #172129;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 1px;
+    cursor: pointer;
+    font-weight: 300;
+    transition: 0.3s ease;
+    font-family: "Unica One", sans-serif;
+}
+.buttons button:hover{
+    background-color: #172129;
+    color: #d2dcdf;
+    border: solid 1px #d2dcdf;
+    font-family: "Unica One", sans-serif;
+}
+#wl_heading{
+    font-family: "Unica One", sans-serif;
+    color: #d2dcdf;
+    border-bottom: #d2dcdf;
+}
+#create{
+    background-color: #d2dcdf;
+    color: #172129;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 1px;
+    cursor: pointer;
+    font-weight: 300;
+    transition: 0.3s ease;
+    font-family: "Unica One", sans-serif;
+}
+#create:hover{
+    background-color: #172129;
+    color: #d2dcdf;
+    border: solid 1px #d2dcdf;
+    font-family: "Unica One", sans-serif;
+}
+#newWatchlistName{
+    background-color: #d2dcdf;
+    border: none;
+    border-radius: 1px;
+    padding: 10px;
+    color: #172129;
+    font-size: 14px;
+}
+form{
+    background-color: #d2dcdf;
+    padding: 30px 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+}
+form h3{
+    text-align: center;
+}
+#LogIn{
+    margin: auto;
+}
+#SignUp{
+    margin: auto;
+}
+form label{
+    text-align: start;
+}
+form input{
+    width: 100%;
+    padding: 10px 12px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 1px;
+}
+form .button{
+    width: 100%;
+    padding: 10px;
+    background-color: #4fd1a3; 
+    color: #172129;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+.mainbox2 p{
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #d2dcdf;
+    text-align: center;
+    margin-top: 10px;
+}
+form p{
+    color: #172129;
+}
+form a{
+     color: #172129;
+     text-decoration: underline;
+}
+#set-heading {
+    color: #d2dcdf;
+    font-family: "Unica One", sans-serif;
+    font-weight: 300;
+    font-size: 3em;
+    padding-left: 5rem;
+}
+.theme{
+    padding: 5rem 2rem;
+    color: #d2dcdf;
+    font-family: "Nunito", sans-serif;
+}
+.preferences{
+    padding: 3rem 2rem;
+    color: #d2dcdf;
+    font-family: "Nunito", sans-serif;
+}
+#account-section {
+    padding: 3rem 2rem;
+    color: #d2dcdf;
+    font-family: "Nunito", sans-serif;
+}
+.settings-container h2 {
+    color: #d2dcdf;
+    font-family: "Unica One", sans-serif;
+    font-weight: 300;
+    font-size: 1em;
+}
+.footer {
+  background-color: #2a3b45;
+  padding: 20px;
+  margin-top: 7rem;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  color: #cbd0d3;
+  border-top: solid 1px #d2dcdf;
+  }
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.tmdb-logo {
+  height: 30px;
+  margin-top: 10px;
+  opacity: 0.8;
+}
+.footer p {
+  margin: 5px 0;
+}
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction:column;
+        gap: 0.5rem;
+        margin-top: 1rem;
+    }
+    .img{
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+  #set-heading {
+    font-size: 2rem;
+    padding-left: 1rem;
+  }
+  .theme, .preferences, #account-section {
+    padding: 1rem;
+  }
+}
