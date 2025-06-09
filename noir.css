@@ -393,7 +393,16 @@ h3{
     color: #d2dcdf;
     border-bottom: #d2dcdf;
 }
-#create{
+.header{
+    padding-left: 4rem;
+}
+.containerwatch{
+    display: flex;
+    gap: 1.5rem;
+    padding-top: 1.9rem;
+    padding-bottom: 3rem;
+}
+.header button{
     background-color: #d2dcdf;
     color: #172129;
     border: none;
@@ -404,7 +413,7 @@ h3{
     transition: 0.3s ease;
     font-family: "Unica One", sans-serif;
 }
-#create:hover{
+.header button:hover{
     background-color: #172129;
     color: #d2dcdf;
     border: solid 1px #d2dcdf;
@@ -417,6 +426,10 @@ h3{
     padding: 10px;
     color: #172129;
     font-size: 14px;
+}
+.container_p{
+    color:#d2dcdf;
+    font-family: "Nunito", sans-serif;
 }
 form{
     background-color: #d2dcdf;
