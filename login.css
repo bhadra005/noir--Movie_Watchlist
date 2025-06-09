@@ -1,0 +1,142 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #172129;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #172129;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+    padding: 0.5rem 1.5rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo a {
+    text-decoration: none;
+}
+
+.img {
+    color: #d2dcdf;
+    font-family: "Unica One", sans-serif;
+    font-size: 2.5em;
+    font-weight: 300;
+    margin: 0;
+}
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+.nav-links a {
+    color: #d2dcdf;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: lighter;
+    font-family: "Nunito", sans-serif;
+}
+.nav-links a:hover {
+    color: #77a3c5;
+    text-decoration: none;
+}
+.mainbox2 {
+    background-color: #172129; 
+    padding: 20px;
+    border: solid 1px #d2dcdf;
+    border-radius: 8px;
+    max-width: 400px;
+    margin: 50px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #d2dcdf; 
+}
+section#LogIn, section#SignUp {
+    padding: 20px;
+}
+form.log_in, form.sign_up {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+h3 {
+    color: #d2dcdf;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: "Unica One", sans-serif;
+}
+label {
+    color: #d2dcdf;
+    font-size: 16px;
+    font-family: "Nunito", sans-serif;
+}
+input[type="email"], input[type="password"] {
+    background-color: #d2dcdf;
+    border: none;
+    border-radius: 1px;
+    padding: 10px;
+    color: #172129;
+    font-size: 14px;
+}
+input.button {
+    background-color: #d2dcdf;
+    color: #172129;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 1px;
+    cursor: pointer;
+    font-weight: 300;
+    transition: 0.3s ease;
+    font-family: "Unica One", serif;
+}
+
+input.button:hover {
+    background-color: #172129;
+    color: #d2dcdf;
+    border: solid 1px #d2dcdf;
+    font-family: "Unica One", serif;
+}
+a {
+    color: #d2dcdf;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+p {
+    color: #d2dcdf;
+    text-align: center;
+    font-size: 14px;
+}
+#inside {
+    font-size: 12px;
+    line-height: 1.5;
+}
+.footer {
+  background-color: #2a3b45;
+  padding: 20px;
+  margin-top: 7rem;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  color: #cbd0d3;
+  border-top: solid 1px #d2dcdf;
+  }
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.tmdb-logo {
+  height: 30px;
+  margin-top: 10px;
+  opacity: 0.8;
+}
+.footer p {
+  margin: 5px 0;
+}

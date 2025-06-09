@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&family=Unica+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="login.css">
+    <title>LogIn / SignUp</title>
+</head>
+<body>
+    <nav>
+    <div class="logo">
+      <a href="index.html"><h2 class="img">noir.</h2></a>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="browse.html">Browse</a>
+      <a href="watchlist.html">Watchlist</a>
+      <a href="settings.html">Settings</a>
+      <a href="login.html">LogIn/SignUp</a>
+      <a href="about.html">About</a>
+    </div>
+    </nav>
+    <div class="mainbox2">
+    <section id="LogIn" style="display: block;">
+        <form class="log_in">
+            <h3>Log In</h3>
+            <label for="mail">Email:</label><br>
+            <input type="email" id="mail" name="mail" placeholder="Email" required><br>
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" placeholder="Password" required><br>
+            <input type="submit" value="Submit" class="button"><br>
+        </form>
+        <p>Don't have an account? <a href="#sign_up" onclick="ShowSignup()">Sign Up Here</a></p>
+    </section>
+    <section id="SignUp" style="display: none;">
+    <form class="sign_up">
+        <h3> Sign Up</h3>
+        <label for="s_mail">Email:</label><br>
+        <input type="email" id="s_mail" name="s_mail" placeholder="Email" required><br>
+        <label for="s_password">Password:</label><br>
+        <input type="password" id="s_password" name="s_password" placeholder="Password" required><br>
+        <label for="s_password2">Confirm Password:</label><br>
+        <input type="password" id="s_password2" name="s_password2" placeholder="Re-enter Password" required><br>
+        <input type="submit" value="Submit" class="button"><br>
+        <p id="inside">By clicking the Sign Up button, you agree to our<br>
+        <a href="#">Terms and Conditions</a> and <a href="#">Policy Privacy</a></p>
+    </form>
+    <p>Already have an account? <a href="#login" onclick="ShowLogin()">Login Here</a></p>
+    </section>
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <p>© 2025 Noir-Movie Watchlist App</p>
+            <p>This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
+            <img src="TMDb.svg" alt="TMDB Logo" class="tmdb-logo">
+        </div>
+    </footer>
+
+    <script type="module" src="authLogin.js"></script>
+    <script>
+        function ShowSignup() {
+        document.getElementById('LogIn').style.display = 'none';
+        document.getElementById('SignUp').style.display = 'block';
+    }
+    function ShowLogin() {
+        document.getElementById('LogIn').style.display = 'block';
+        document.getElementById('SignUp').style.display = 'none';
+    }
+    </script>
+    <script>
+       function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        } 
+    </script>
+</body>
+</html>
