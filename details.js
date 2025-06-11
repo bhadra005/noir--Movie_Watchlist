@@ -1,4 +1,6 @@
 import {addToWatchlist} from './fireStore.js';
+import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-auth.js";
+
 const API_KEY = `faf1eb835714e532f318e0c3aecd7e1c`
 const movieId = getMovieIdFromURL();
 let movieData = null;
@@ -76,8 +78,11 @@ async function saveToWatchlist() {
     const watchlistName = prompt("enter watchlist name: ");
     if (!watchlistName) return;
 
+    console.log("Attempting to add movie to watchlist:", { watchlistName, movie });
+
     try{
         await addToWatchlist(watchlistName, movie);
+        console.log("addToWatchlist function called successfully.");
         alert(`"${movie.title}" added to ${watchlistName}.`);
     }
     catch (e) {

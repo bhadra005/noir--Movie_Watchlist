@@ -213,6 +213,58 @@ document.querySelectorAll('[data-year-range]').forEach(link => {
     });
 });
 
+document.querySelectorAll('[data-genre]').forEach(link => {
+    link.addEventListener('click', async (e) => {
+        e.preventDefault(); 
+
+        const genreId = e.target.getAttribute('data-genre');
+
+        const url = `${BASE_URL}?api_key=${API_KEY}&with_genres=${genreId}&sort_by=popularity.desc`; 
+
+        console.log("Fetching from URL (genre):", url); 
+
+        try {
+            const res = await fetch(url);
+            const data = await res.json();
+            console.log("Fetched data (genre):", data); 
+            if (data.results) {
+                displayMovies(data.results); 
+            } else {
+                console.warn("No results key in genre response:", data);
+                document.getElementById('movie-list').innerHTML = '<p>No movies found for this genre.</p>';
+            }
+        } catch (err) {
+            console.error("Error fetching movies by genre: ", err);
+        }
+    });
+});
+
+document.querySelectorAll('[data-rating]').forEach(link => {
+    link.addEventListener('click', async (e) => {
+        e.preventDefault();
+
+        const sortOrder = e.target.getAttribute('data-rating');
+
+        const url = `${BASE_URL}?api_key=${API_KEY}&sort_by=vote_average.${sortOrder}`;
+
+        console.log("Fetching from URL (rating):", url);
+
+        try {
+            const res = await fetch(url);
+            const data = await res.json();
+            console.log("Fetched data (rating):", data);
+            if (data.results) {
+                displayMovies(data.results); 
+            } else {
+                console.warn("No results key in rating response:", data);
+                document.getElementById('movie-list').innerHTML = '<p>No movies found with this rating.</p>';
+            }
+        } catch (err) {
+            console.error("Error fetching movies by rating: ", err);
+        }
+    });
+});
+
 function displayMovies(movies) {
   const container = document.getElementById("movie-list");
   container.innerHTML = '';

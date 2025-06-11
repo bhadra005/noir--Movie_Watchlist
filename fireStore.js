@@ -5,7 +5,15 @@ import{
     getDocs,
     deleteDoc,
     doc,
-    setDoc
+    setDoc,
+    writeBatch,
+    getDoc,
+    createWatchlist, 
+    addToWatchlist, 
+    getAllWatchlists, 
+    getWatchlist, 
+    removeFromWatchlist, 
+    deleteWatchlist
 } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-firestore.js";
 
 export async function createWatchlist(name) {
@@ -20,6 +28,14 @@ export async function createWatchlist(name) {
 export async function addToWatchlist(name, movie) {
     const user = auth.currentUser;
     if (!user || !name.trim()) return;
+
+    const watchlistRef = doc(db, "users", user.uid, "watchlists", name.trim());
+    const watchlistDoc = await getDoc(watchlistRef);
+
+    if (!watchlistDoc.exists()) {
+        await setDoc(watchlistRef, {}); // Create an empty watchlist document
+        console.log("Watchlist document created:", name);
+    }
 
     try {
         await addDoc(collection(db, "users", user.uid, "watchlists", name.trim(),"movies"), {
@@ -60,4 +76,31 @@ export async function removeFromWatchlist(name, docId) {
 
     await deleteDoc(doc(db, "users", user.uid, "watchlists", name.trim(), "movies", docId));
     console.log("Movie removed from ", name);
+}
+
+export async function deleteWatchlist(name) {
+    const user = auth.currentUser;
+    if (!user || !name.trim()) return;
+
+    const watchlistRef = doc(db, "users", user.uid, "watchlists", name.trim());
+    const moviesRef = collection(watchlistRef, "movies");
+
+    try {
+        const querySnapshot = await getDocs(moviesRef);
+
+        const batch = writeBatch(db);
+        querySnapshot.forEach((docSnap) => {
+            batch.delete(docSnap.ref);
+        });
+
+        await batch.commit();
+        console.log(`All movies deleted from watchlist: ${name}`);
+
+        await deleteDoc(watchlistRef);
+        console.log(`Watchlist deleted: ${name}`);
+
+    } catch (e) {
+        console.error("Error deleting watchlist:", e);
+        throw e; 
+    }
 }

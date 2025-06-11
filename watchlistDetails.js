@@ -9,11 +9,16 @@ onAuthStateChanged(auth, async (user) => {
         const urlParams = new URLSearchParams(window.location.search);
         const playlistName = urlParams.get("playlist");
 
+        const watchlistTitleElement = document.getElementById("watchlistTitle");
+
         if (!playlistName) {
             document.getElementById("watchlist-container").innerHTML = "<p> No Watchlist selected. </p>";
+            watchlistTitleElement.textContent = "No Watchlist Selected";
             return;
         }
 
+        watchlistTitleElement.textContent = playlistName;
+        
         const watchlistRef = collection(db,"users",user.uid, "watchlists", playlistName, "movies");
 
         try {

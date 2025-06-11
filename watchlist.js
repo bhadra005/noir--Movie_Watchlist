@@ -1,4 +1,4 @@
-import { getAllWatchlists, createWatchlist } from './fireStore.js';
+import { getAllWatchlists, createWatchlist, deleteWatchlist } from './fireStore.js';
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-auth.js";
 
 const auth = getAuth();
@@ -34,6 +34,23 @@ async function loadWatchlists() {
     container.innerHTML = lists.map(name => `
         <div class="watchlist-entry">
             <a href="watchlistDetails.html?playlist=${encodeURIComponent(name)}">${name}</a>
+            <button class="delete-watchlist" data-watchlist-name="${name}">Delete</button>
         </div>
     `).join("");
+
+    document.querySelectorAll('.delete-watchlist').forEach(button => {
+        button.addEventListener('click', async (event) => {
+            const watchlistName = event.target.dataset.watchlistName;
+            if (confirm(`Are you sure you want to delete the watchlist "${watchlistName}"?`)) {
+                try {
+                    await deleteWatchlist(watchlistName);
+                    // Reload the watchlist list after deletion
+                    loadWatchlists();
+                } catch (error) {
+                    alert("Failed to delete watchlist.");
+                    console.error("Error deleting watchlist:", error);
+                }
+            }
+        });
+    });
 }
