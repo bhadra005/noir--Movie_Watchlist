@@ -1,6 +1,6 @@
 # NOIR - MOVIE TRACKING WEBSITE
 
-A simple and user - friendly web application that enables users to track movies they have watched,have yet to watch or are currently watching.They are also able to create their own personalised watchlist depending on the genre,rating or year.
+A simple and user - friendly web application that enables users to track movies they have watched or have yet to watch.They are also able to create their own personalised watchlist depending on the genre,rating or year.
 
 ##DEMO
 
