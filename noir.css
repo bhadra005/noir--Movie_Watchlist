@@ -358,7 +358,7 @@ body.light-theme .card{
     text-align: center;
     color: #d2dcdf;
 }
-body.body.light-theme .actor-card{
+body.light-theme .actor-card{
     color: #172129;
 }
 .actor-card img{
@@ -369,8 +369,7 @@ body.body.light-theme .actor-card{
 .English{
     padding: 20px;
     background-color: #172129;
-    color: #d2dcdf;
-    
+    color: #d2dcdf;  
 }
 .English h3{
     margin-bottom: 10px;
@@ -425,6 +424,8 @@ body.light-theme #movie-container{
     padding-bottom: 0.5rem;
     color: #d2dcdf;
     font-family: "Unica One", sans-serif;
+    max-width: 400px;
+    width: 100%;
 }
 body.light-theme #movie-container h2{
     color: #172129;
