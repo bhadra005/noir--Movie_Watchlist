@@ -7,13 +7,7 @@ import{
     doc,
     setDoc,
     writeBatch,
-    getDoc,
-    createWatchlist, 
-    addToWatchlist, 
-    getAllWatchlists, 
-    getWatchlist, 
-    removeFromWatchlist, 
-    deleteWatchlist
+    getDoc
 } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-firestore.js";
 
 export async function createWatchlist(name) {
