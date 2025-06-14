@@ -2,25 +2,23 @@ import { getAuth, onAuthStateChanged, updatePassword, deleteUser, signOut } from
 import { auth } from './fireBase.js'; 
 
 const themeToggle = document.getElementById('theme-toggle');
-themeToggle.addEventListener('change', () => {
-  document.body.classList.toggle('light-theme', !themeToggle.checked);
-  localStorage.setItem('theme', themeToggle.checked ? 'dark' : 'light');
-});
-
 
 if (localStorage.getItem('theme') === 'light') {
   document.body.classList.add('light-theme');
   themeToggle.checked = false;
-}
-else { 
-  document.body.classList.add('dark-theme'); 
-  themeToggle.checked = true; 
+} else {
+  document.body.classList.remove('light-theme'); 
+  themeToggle.checked = true;
 }
 
-document.getElementById('save-preferences').addEventListener('click', () => {
-  const lang = document.getElementById('language').value;
-  localStorage.setItem('language', lang);
-  alert('Preferences saved.');
+themeToggle.addEventListener('change', () => {
+  if (themeToggle.checked) {
+    document.body.classList.remove('light-theme');
+    localStorage.setItem('theme', 'dark');
+  } else {
+    document.body.classList.add('light-theme');
+    localStorage.setItem('theme', 'light');
+  }
 });
 
 
