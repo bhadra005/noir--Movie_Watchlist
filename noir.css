@@ -506,6 +506,20 @@ body.light-theme #wl_heading{
 .header{
     padding-left: 4rem;
 }
+.clear{
+    clear:both;
+}
+#watchlistTitle{
+    color: #d2dcdf;
+    font-family: "Unica One", sans-serif;
+    font-weight: 300;
+    padding-top: 2.5rem;
+    padding-left: 2.5rem;
+    padding-bottom: 3rem;
+}
+body.light-theme #watchlistTitle {
+    color: #172129
+}
 .containerwatch{
     display: flex;
     gap: 1.5rem;
@@ -625,17 +639,19 @@ body.light-theme .delete-watchlist:hover{
     width: 100%;
 }
 .movie-card {
-    background-color: #1f2a36; 
-    border-radius: 4px;
+    background-color: #1f2a36;
+    border-radius: 2px;
+    display: block;
+    text-decoration: none;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    transition: transform 0.2s ease;
-    color: #d2dcdf; 
+    flex-shrink: 0;
     font-family: "Nunito", sans-serif;
-    text-align: center;
-    display: flex; 
-    flex-direction: column; 
-    justify-content: space-between; 
+    font-weight: 500;
+    font-size: medium;
+    font-weight: lighter;
+    color: #d2dcdf;
+    width: clamp(200px, 5rem, 400px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 body.light-theme .movie-card {
     background-color: #c3cccf;
