@@ -5,10 +5,10 @@ const themeToggle = document.getElementById('theme-toggle');
 
 if (localStorage.getItem('theme') === 'light') {
   document.body.classList.add('light-theme');
-  themeToggle.checked = false;
+  themeToggle.checked = true;
 } else {
   document.body.classList.remove('light-theme'); 
-  themeToggle.checked = true;
+  themeToggle.checked = false;
 }
 
 themeToggle.addEventListener('change', () => {
