@@ -4,6 +4,21 @@ body {
     background-color: #172129;
     color: #d2dcdf;
 }
+::-webkit-scrollbar {
+  width: 10px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #172129; 
+}
+::-webkit-scrollbar-thumb {
+  background: #d2dcdf;
+  border-radius: 6px; 
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #93b2bc;
+  border-radius: 6px; 
+}
 nav {
     display: flex;
     justify-content: space-between;
