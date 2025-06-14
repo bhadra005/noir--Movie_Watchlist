@@ -3,7 +3,7 @@ import { auth } from './fireBase.js';
 
 const themeToggle = document.getElementById('theme-toggle');
 themeToggle.addEventListener('change', () => {
-  document.body.classList.toggle('light-theme', themeToggle.checked);
+  document.body.classList.toggle('light-theme', !themeToggle.checked);
   localStorage.setItem('theme', themeToggle.checked ? 'dark' : 'light');
 });
 
